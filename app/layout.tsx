@@ -10,12 +10,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Homes for Sale in Peccole Ranch, Las Vegas | Peccole Ranch Real Estate",
+    default: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
     template: `%s | ${site.name}`,
   },
   description:
-    "Peccole Ranch Las Vegas real estate. Find homes for sale in Peccole Ranch, Summerlin. Local expertise for buyers and sellers.",
+    "Peccole Ranch Homes and Las Vegas real estate. Find homes for sale in Peccole Ranch, Summerlin. Local expertise for buyers and sellers.",
   keywords: [
+    "Peccole Ranch Homes",
     "Peccole Ranch",
     "Peccole Ranch Las Vegas",
     "homes for sale Peccole Ranch",
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
     "Summerlin real estate",
   ],
   openGraph: {
-    title: "Homes for Sale in Peccole Ranch, Las Vegas",
-    description: "Peccole Ranch real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
+    title: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
+    description: "Peccole Ranch Homes and Las Vegas real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
     url: site.baseUrl,
     siteName: site.name,
     locale: "en_US",
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.baseUrl),
   twitter: {
     card: "summary_large_image",
-    title: "Homes for Sale in Peccole Ranch, Las Vegas",
-    description: "Peccole Ranch real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
+    title: "Peccole Ranch Homes | Homes for Sale in Peccole Ranch, Las Vegas",
+    description: "Peccole Ranch Homes and Las Vegas real estate. Local expertise for buyers and sellers in Peccole Ranch, Summerlin.",
   },
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
     other: { "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
@@ -55,6 +56,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="dns-prefetch" href="https://em.realscout.com" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI and LLM crawlers (GEO)" />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <Script

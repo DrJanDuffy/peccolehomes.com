@@ -5,7 +5,7 @@
 
 export const site = {
   name: "Peccole Homes",
-  shortDescription: "Real estate in Peccole Ranch, Las Vegas",
+  shortDescription: "Peccole Ranch Homes and real estate in Las Vegas",
   baseUrl: "https://peccolehomes.com",
 } as const;
 
@@ -32,6 +32,16 @@ export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination
 
 /** Replace with your GBP review page URL */
 export const googleReviewsUrl = "https://search.google.com/local/writereview?placeid=PLACE_ID";
+
+/** Agent and brokerage for AEO/schema and footer. */
+export const agent = {
+  name: "Dr. Jan Duffy",
+  license: "S.0197614.LLC",
+} as const;
+
+export const brokerage = {
+  name: "Berkshire Hathaway HomeServices Nevada Properties",
+} as const;
 
 /** RealScout widget agent ID (base64). Same as heyberkshire.com if same agent. */
 export const realScoutAgentEncodedId =

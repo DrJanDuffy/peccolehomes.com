@@ -1,15 +1,21 @@
 import Link from "next/link";
-import { nap, directionsUrl, googleReviewsUrl } from "@/lib/site";
+import { nap, directionsUrl, googleReviewsUrl, agent, brokerage } from "@/lib/site";
+import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
-      <section className="text-center">
+      <WebPageJsonLd
+        name="Peccole Ranch Homes for Sale"
+        description={`Peccole Ranch Homes for sale in Summerlin, Las Vegas. ${agent.name}, ${brokerage.name}, at 9501 Red Hills Rd, Las Vegas, NV 89117—buy or sell with confidence.`}
+        path="/"
+      />
+      <section className="text-center" aria-label="Peccole Ranch Homes for Sale">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-          Peccole Ranch Las Vegas Real Estate
+          Peccole Ranch Homes for Sale
         </h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Your local expert for homes for sale in Peccole Ranch, Summerlin. Buy or sell with confidence.
+        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
+          Peccole Ranch Homes are for sale in Summerlin, Las Vegas. {agent.name} with {brokerage.name} is your local expert at {nap.street}, {nap.city}, {nap.state} {nap.zip}—find listings, buy, or sell with confidence.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
@@ -47,7 +53,7 @@ export default function HomePage() {
           for families and professionals who want space and quality of life without leaving the valley.
         </p>
         <p className="mt-4 text-gray-600 dark:text-gray-300">
-          Whether you’re looking for a first home, an upgrade, or an investment property in Peccole Ranch, 
+          Whether you’re looking for a first home, an upgrade, or an investment property among Peccole Ranch homes, 
           we focus on this neighborhood so we can give you hyperlocal market insight and a smooth experience.
         </p>
       </section>
@@ -57,7 +63,7 @@ export default function HomePage() {
           href="/peccole-ranch"
           className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
         >
-          Learn more about Peccole Ranch
+          Peccole Ranch Homes for Sale
         </Link>
         <Link
           href="/contact"

@@ -1,19 +1,28 @@
 import type { Metadata } from "next";
-import { nap, fullAddress, directionsUrl } from "@/lib/site";
+import { nap, fullAddress, directionsUrl, agent, brokerage } from "@/lib/site";
+import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Contact us for Peccole Ranch and Las Vegas real estate. Visit ${nap.street}, ${nap.city}, or call.`,
+  description: `Contact ${agent.name}, ${brokerage.name}, for Peccole Ranch Homes. Visit ${nap.street}, ${nap.city}, or call.`,
 };
 
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
+      <WebPageJsonLd
+        name="Contact Peccole Homes"
+        description={`Contact ${agent.name}, ${brokerage.name}, for Peccole Ranch Homes: call ${nap.phone}, visit ${fullAddress}, or get directions online.`}
+        path="/contact"
+      />
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         Contact us
       </h1>
-      <p className="mt-4 text-gray-600 dark:text-gray-300">
-        Get in touch for Peccole Ranch homes for sale, listings, or a free consultation.
+      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
+        To contact {agent.name} with {brokerage.name} for Peccole Ranch Homes: call {nap.phone}, visit {fullAddress}, or use the directions link below.
+      </p>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">
+        Get in touch for Peccole Ranch Homes for sale, listings, or a free consultation.
       </p>
 
       <div className="mt-10 rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800/50">

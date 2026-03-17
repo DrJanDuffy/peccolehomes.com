@@ -58,7 +58,10 @@ export function Footer() {
           </div>
         </div>
         <p className="mt-8 border-t border-gray-200 pt-8 text-center text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
-          © {new Date().getFullYear()} {nap.businessName}. Peccole Ranch, Las Vegas real estate.
+          © 2025 Peccole Homes. Peccole Ranch, Las Vegas. © 2025 Berkshire Hathaway HomeServices Nevada Properties - Comprehensive Real Estate Services by Dr. Jan Duffy S.0197614. All rights reserved.{" "}
+          <a href="/llms.txt" className="underline hover:no-underline" rel="alternate" type="text/plain" title="Site summary for AI/LLM crawlers">
+            llms.txt
+          </a>
         </p>
       </div>
     </footer>

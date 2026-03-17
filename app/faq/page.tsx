@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { WebPageJsonLd } from "@/components/WebPageJsonLd";
+import { agent, brokerage } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "FAQ — Peccole Ranch Real Estate",
+  title: "FAQ — Peccole Ranch Homes",
   description:
-    "Frequently asked questions about Peccole Ranch, Las Vegas: location, HOA, schools, and buying or selling in the neighborhood.",
+    "Frequently asked questions about Peccole Ranch Homes and Las Vegas real estate with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties: location, HOA, schools, buying or selling.",
 };
 
 const faqs = [
@@ -23,9 +25,9 @@ const faqs = [
       "Peccole Ranch is served by Clark County School District schools in the Summerlin area. Many families choose the area for its school options and family-friendly environment.",
   },
   {
-    question: "What types of homes are in Peccole Ranch?",
+    question: "What types of Peccole Ranch homes are available?",
     answer:
-      "You’ll find single-family homes in a range of sizes and styles, including newer construction and established neighborhoods. Floor plans and lot sizes vary by subdivision.",
+      "You’ll find single-family Peccole Ranch homes in a range of sizes and styles, including newer construction and established neighborhoods. Floor plans and lot sizes vary by subdivision.",
   },
   {
     question: "How do I get started buying or selling in Peccole Ranch?",
@@ -37,11 +39,16 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
+      <WebPageJsonLd
+        name="FAQ — Peccole Ranch Homes"
+        description={`Frequently asked questions about Peccole Ranch Homes and Las Vegas real estate with ${agent.name}, ${brokerage.name}: where is Peccole Ranch, HOA fees, schools, types of homes, and how to buy or sell.`}
+        path="/faq"
+      />
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         Frequently asked questions
       </h1>
-      <p className="mt-4 text-gray-600 dark:text-gray-300">
-        Common questions about Peccole Ranch and our real estate services.
+      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
+        Common questions about Peccole Ranch Homes and Las Vegas real estate with {agent.name}, {brokerage.name}, answered: location, HOA, schools, home types, and how to get started buying or selling.
       </p>
 
       <dl className="mt-10 space-y-8">

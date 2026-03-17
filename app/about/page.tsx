@@ -1,18 +1,27 @@
 import type { Metadata } from "next";
-import { nap, site } from "@/lib/site";
+import { nap, site, agent, brokerage } from "@/lib/site";
+import { WebPageJsonLd } from "@/components/WebPageJsonLd";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `About ${nap.businessName} — your Peccole Ranch and Las Vegas real estate expert. Local knowledge, trusted service.`,
+  description: `About ${nap.businessName} — ${agent.name}, ${brokerage.name}. Peccole Ranch Homes and Las Vegas real estate. Local knowledge, trusted service.`,
 };
 
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16">
+      <WebPageJsonLd
+        name={`About ${nap.businessName}`}
+        description={`${nap.businessName} — ${agent.name}, ${agent.license}, with ${brokerage.name}. Peccole Ranch Homes and Summerlin, Las Vegas. Office: ${nap.street}, ${nap.city}, ${nap.state} ${nap.zip}.`}
+        path="/about"
+      />
       <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
         About {nap.businessName}
       </h1>
-      <p className="mt-6 text-lg text-gray-600 dark:text-gray-300">
+      <p className="mt-6 text-lg text-gray-600 dark:text-gray-300" data-aeo-answer>
+        {nap.businessName} is led by {agent.name} (Nevada license {agent.license}) with {brokerage.name}, focused on Peccole Ranch Homes and the greater Summerlin area in Las Vegas. Office: {nap.street}, {nap.city}, {nap.state} {nap.zip}.
+      </p>
+      <p className="mt-4 text-gray-600 dark:text-gray-300">
         We focus on Peccole Ranch and the greater Summerlin area so we can offer real local expertise— 
         from market trends and neighborhood fit to schools and HOA details. Whether you’re buying or selling 
         in Peccole Ranch, Las Vegas, we’re here to help with a straightforward, professional experience.
