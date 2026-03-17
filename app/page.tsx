@@ -1,0 +1,77 @@
+import Link from "next/link";
+import { nap, directionsUrl, googleReviewsUrl } from "@/lib/site";
+
+export default function HomePage() {
+  return (
+    <div className="mx-auto max-w-4xl px-4 py-16">
+      <section className="text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          Peccole Ranch Las Vegas Real Estate
+        </h1>
+        <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+          Your local expert for homes for sale in Peccole Ranch, Summerlin. Buy or sell with confidence.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <a
+            href={`tel:${nap.phone.replace(/\D/g, "")}`}
+            className="inline-flex rounded-md bg-gray-900 px-6 py-3 text-base font-medium text-white hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200"
+          >
+            Call
+          </a>
+          <a
+            href={directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+          >
+            Directions
+          </a>
+          <a
+            href={googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+          >
+            View Google Reviews
+          </a>
+        </div>
+      </section>
+
+      <section className="mt-16 prose prose-gray dark:prose-invert max-w-none">
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+          Why Peccole Ranch?
+        </h2>
+        <p className="mt-4 text-gray-600 dark:text-gray-300">
+          Peccole Ranch is a master-planned community in Summerlin, one of Las Vegas’s most sought-after areas. 
+          Tree-lined streets, parks, top-rated schools, and easy access to Red Rock Canyon and the 215 make it ideal 
+          for families and professionals who want space and quality of life without leaving the valley.
+        </p>
+        <p className="mt-4 text-gray-600 dark:text-gray-300">
+          Whether you’re looking for a first home, an upgrade, or an investment property in Peccole Ranch, 
+          we focus on this neighborhood so we can give you hyperlocal market insight and a smooth experience.
+        </p>
+      </section>
+
+      <section className="mt-12 flex flex-wrap gap-6">
+        <Link
+          href="/peccole-ranch"
+          className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+        >
+          Learn more about Peccole Ranch
+        </Link>
+        <Link
+          href="/contact"
+          className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+        >
+          Contact us
+        </Link>
+        <Link
+          href="/about"
+          className="font-medium text-gray-900 underline underline-offset-4 dark:text-white"
+        >
+          About us
+        </Link>
+      </section>
+    </div>
+  );
+}
