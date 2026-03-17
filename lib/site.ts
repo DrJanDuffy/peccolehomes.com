@@ -6,7 +6,7 @@
 export const site = {
   name: "Peccole Homes",
   shortDescription: "Peccole Ranch Homes and real estate in Las Vegas",
-  baseUrl: "https://peccolehomes.com",
+  baseUrl: "https://www.peccolehomes.com",
 } as const;
 
 export const nap = {

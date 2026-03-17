@@ -4,8 +4,8 @@ The site is prepared for Google Search with:
 
 - **Metadata:** Title, description, keywords, and Open Graph on every page
 - **Structured data:** RealEstateAgent (LocalBusiness) and WebSite JSON-LD in the root layout; WebPage and FAQPage where applicable
-- **Sitemap:** `https://peccolehomes.com/sitemap.xml` lists all indexable pages
-- **Robots:** `https://peccolehomes.com/robots.txt` allows crawling and references the sitemap
+- **Sitemap:** `https://www.peccolehomes.com/sitemap.xml` lists all indexable pages
+- **Robots:** `https://www.peccolehomes.com/robots.txt` allows crawling and references the sitemap
 - **Twitter cards:** Set for sharing
 - **Web app manifest:** `/manifest.webmanifest` for name and start URL
 - **Canonical URLs:** `metadataBase` in `lib/site.ts` so canonicals match production
@@ -19,7 +19,7 @@ The site is prepared for Google Search with:
 
 1. Open [Google Search Console](https://search.google.com/search-console).
 2. **Add property** → choose **URL prefix**.
-3. Enter: `https://peccolehomes.com` (must match your live domain and `lib/site.ts` `baseUrl`).
+3. Enter: `https://www.peccolehomes.com` (primary; bare `peccolehomes.com` redirects to www and must match `lib/site.ts` `baseUrl`).
 
 ### 2. Verify ownership
 
@@ -44,15 +44,15 @@ The site is prepared for Google Search with:
 1. In GSC, go to **Sitemaps** (left menu).
 2. Under “Add a new sitemap”, enter: `sitemap.xml`
 3. Click **Submit**.  
-   Full URL will be: `https://peccolehomes.com/sitemap.xml`
+   Full URL will be: `https://www.peccolehomes.com/sitemap.xml`
 
 ### 4. Optional: request indexing for key URLs
 
 In **URL Inspection**, enter and “Request indexing” for:
 
-- `https://peccolehomes.com`
-- `https://peccolehomes.com/peccole-ranch`
-- `https://peccolehomes.com/contact`
+- `https://www.peccolehomes.com`
+- `https://www.peccolehomes.com/peccole-ranch`
+- `https://www.peccolehomes.com/contact`
 
 ### 5. After verification
 
