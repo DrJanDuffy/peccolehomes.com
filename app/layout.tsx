@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { site } from "@/lib/site";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
 import { WebSiteJsonLd } from "@/components/WebSiteJsonLd";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { RealScoutWidget } from "@/components/RealScoutWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,12 +53,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="dns-prefetch" href="https://em.realscout.com" />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen antialiased">
         <Header />
         <main className="min-h-screen">{children}</main>
+        <RealScoutWidget />
         <Footer />
       </body>
     </html>

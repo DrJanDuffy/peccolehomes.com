@@ -32,3 +32,7 @@ export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination
 
 /** Replace with your GBP review page URL */
 export const googleReviewsUrl = "https://search.google.com/local/writereview?placeid=PLACE_ID";
+
+/** RealScout widget agent ID (base64). Same as heyberkshire.com if same agent. */
+export const realScoutAgentEncodedId =
+  process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID ?? "QWdlbnQtMjI1MDUw";
