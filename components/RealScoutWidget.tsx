@@ -3,21 +3,38 @@
 import { realScoutAgentEncodedId } from "@/lib/site";
 
 /**
- * RealScout search widget. Rendered on every page.
+ * RealScout search + office listings. Rendered on every page.
  * Script loaded once in root layout (em.realscout.com).
  * Using dangerouslySetInnerHTML per RealScout widget integration rules.
  */
 export function RealScoutWidget() {
-  const widgetMarkup = `<realscout-simple-search agent-encoded-id="${realScoutAgentEncodedId}" placeholder="Search Peccole Ranch, Las Vegas..." widget-width="100%"></realscout-simple-search>`;
+  const searchMarkup = `<realscout-simple-search agent-encoded-id="${realScoutAgentEncodedId}" placeholder="Search Peccole Ranch, Las Vegas..." widget-width="100%"></realscout-simple-search>`;
+  const officeListingsMarkup = [
+    `<realscout-office-listings`,
+    ` agent-encoded-id="${realScoutAgentEncodedId}"`,
+    ` sort-order="STATUS_AND_SIGNIFICANT_CHANGE"`,
+    ` listing-status="For Sale"`,
+    ` property-types="SFR,MF"`,
+    ` price-min="0"`,
+    ` price-max="9999999"`,
+    `></realscout-office-listings>`,
+  ].join("");
 
   return (
-    <section className="mx-auto max-w-4xl px-4 py-12" aria-label="Search Peccole Ranch homes">
+    <section className="mx-auto max-w-6xl px-4 py-12" aria-label="Peccole Ranch real estate search and listings">
       <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
         Search homes in Peccole Ranch
       </h2>
       <div
         className="min-h-[120px] w-full"
-        dangerouslySetInnerHTML={{ __html: widgetMarkup }}
+        dangerouslySetInnerHTML={{ __html: searchMarkup }}
+      />
+      <h2 className="mt-12 mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+        Peccole Ranch listings
+      </h2>
+      <div
+        className="min-h-[320px] w-full"
+        dangerouslySetInnerHTML={{ __html: officeListingsMarkup }}
       />
     </section>
   );
